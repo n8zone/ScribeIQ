@@ -1,5 +1,34 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  min-height: 80vh;
+}
+
+.notes-container {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notes-container h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.notes-container h2:active {
+  cursor: none;
+}
+
+.note-textarea {
+  width: 100%;
+  margin: 0 50px;
+}
+.note-textarea textarea {
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -35,4 +64,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
 }

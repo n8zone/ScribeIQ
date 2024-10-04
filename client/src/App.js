@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import './App.css'
 
 function App() {
   const [message, setMessage] = useState('');
@@ -80,16 +81,24 @@ function App() {
     }
 
   return (
-      <div className="App">
-          {notes.map((note, index) =>
-              (
-              <div key={index}>
-                <h1 onClick={() => switchWorkingNote(note)}>{note.title}</h1>
+      <>
+          <div className="App">
+              <div className='notes-container'>
+                  <h1>Notes</h1>
+                  {notes.map((note, index) =>
+                      (
+                          <div key={index}>
+                              <h2 onClick={() => switchWorkingNote(note)}>{note.title}</h2>
+                          </div>
+                      ))}
               </div>
-          ))}
-          <textarea value={workingNoteContent} onChange={handleNoteUpdate}></textarea>
-          <button onClick={() => saveNotes()}>Save</button>
-      </div>
+              <div className='note-textarea'>
+                  <h1>{workingNote.title}</h1>
+                  <textarea value={workingNoteContent} onChange={handleNoteUpdate}></textarea>
+                  <button onClick={() => saveNotes()}>Save</button>
+              </div>
+          </div>
+      </>
   );
 }
 
